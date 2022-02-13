@@ -39,4 +39,8 @@ export class AppComponent {
       estado: 'Reprobado'
     }
   ]
+  mostrar = true;
+  toogle():void{
+    this.mostrar = !this.mostrar;
+  }
 }
