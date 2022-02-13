@@ -2,5 +2,10 @@
   <div class="row">
     <!-- Interpolación -->
    <h3>Hola {{nombre}}</h3> 
+   <h3>La suma de 2 + 2 es :  {{2+2}}</h3> 
+   <h3>La suma de 10 + 2 es :  {{getSuma(10,2)}}</h3>
+   <!-- Binding  para atributos utilizar este-->
+   <input type="text" class="form-control" [placeholder]="texto" [disabled]="deshabilitado">
+   
   </div>
 </div>
