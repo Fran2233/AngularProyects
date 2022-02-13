@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {tarea} from 'src/app/models/tarea';
 @Component({
   selector: 'app-tareas',
   templateUrl: './tareas.component.html',
@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TareasComponent implements OnInit {
 
+  listTareas: tarea[] = [];
+  nombreTarea: '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addTarea(){
+    // Crear obj tarea
+    const tarea: tarea = {
+     nombre :  this.nombreTarea,
+     estado: false
+    }
+
+    // agregar obj tarea en array
+    this.listTareas.push(tarea);
+
+    // resetinput
+    this.nombreTarea = '';
   }
 
 }
