@@ -24,7 +24,7 @@
       <h3>Listado de estudiantes</h3>
       <button class="btn btn-primary ml-auto" (click)="toogle()">Ocultar/Mostrar Tabla</button>
     </div>
-    <table class="table" *ngIf ="mostrar" >
+    <table class="table" *ngIf ="mostrar && listEstudiantes.length > 0" >
       <thead>
         <th>Nro</th>
         <th>Nombre</th>
