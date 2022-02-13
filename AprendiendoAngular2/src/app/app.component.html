@@ -33,14 +33,16 @@
       <tbody>
         <tr *ngFor="let estudiante of listEstudiantes; let i = index">
           <td>{{i + 1}}</td>
-          <td>{{estudiante.nombre}}</td><!-- Directiva ngStyle -->
-          <td [ngStyle]="{'font-style': estudiante.estado === 'Aprobado' ? 'italic' : 'normal'}">{{estudiante.estado}}</td>
+          <td>{{estudiante.nombre}}</td><!-- Directiva ngStyle --> <!-- Directiva ngClass -->
+          <td [ngStyle]="{'font-style': estudiante.estado === 'Aprobado' ? 'italic' : 'normal'}">
+            <span [ngClass]="estudiante.estado === 'Aprobado'  ? 'badge bg-success' : 'badge bg-secondary' ">{{estudiante.estado}}</span>  
+          </td>
         </tr>
       </tbody>
     </table>
     <h3 *ngIf = "listEstudiantes.length === 0">No hay resgistros para mostrar</h3>
 </div>
+<!-- Directiva ngSwitch -->
 
-<!-- Directiva ngClass -->
 
 
