@@ -37,6 +37,7 @@
           <!-- Directiva ngStyle --> <!-- Directiva ngClass -->
           <!-- Ejemplo ngClass <span [ngClass]="estudiante.estado === 'Aprobado'  ? 'badge bg-success' : 'badge bg-secondary' ">{{estudiante.estado}}</span> -->
           <td [ngStyle]="{'font-style': estudiante.estado === 'Aprobado' ? 'italic' : 'normal'}">
+            <!-- Directiva ngSwitch -->
             <span *ngSwitchCase="'Aprobado'" class="badge bg-success">
               {{estudiante.estado}}
             </span>
@@ -52,7 +53,7 @@
     </table>
     <h3 *ngIf = "listEstudiantes.length === 0">No hay resgistros para mostrar</h3>
 </div>
-<!-- Directiva ngSwitch -->
+
 
 
 
