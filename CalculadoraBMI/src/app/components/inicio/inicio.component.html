@@ -3,17 +3,17 @@
         <h2 class="titulo">BMI calculator</h2>
         <div class="row">
             <div class="col-lg-6">
-                <div class="fondoItem">
-                    <div class="contenedor">
+                <div class="fondoItem" [ngClass]="{'sexoDesactivo': sexo === 'Femenino'}">
+                    <div class="contenedor"style="cursor: pointer;" (click)="masculino()">
                         <i class="fa-solid fa-mars sexo"></i>
                         <p>Masculino</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="fondoItem">
+                <div class="fondoItem" [ngClass]="{'sexoDesactivo': sexo === 'Masculino'}">
                     <div class="contenedor">
-                        <i class="fa-solid fa-venus sexo"></i>
+                        <i class="fa-solid fa-venus sexo"style="cursor: pointer;" (click)="femenino()"></i>
                         <p>Femenino</p>
                     </div>
                 </div>
@@ -25,10 +25,10 @@
                     <div class="contenedor">
                         <p>Altura</p>
                         <div class="estiloNum">
-                            170
+                            {{altura}}
                             <span class="cm">cm</span>
                         </div>
-                        <input type="range" class="form-range">
+                        <input type="range" (input)="cambiarAltura($event)" [value]="altura" min="120" max="220" class="form-range">
                     </div>
 
                 </div>
@@ -40,11 +40,11 @@
                     <div class="contenedor">
                         <p>Peso</p>
                         <div class="estiloNum">
-                            60
+                            {{peso}}
                         </div>
                         <div>
-                            <i class="fa-solid fa-minus sumaResta"></i>
-                            <i class="fa-solid fa-plus sumaResta"></i>
+                            <i class="fa-solid fa-minus sumaResta" (click)="peso = peso -1"></i>
+                            <i class="fa-solid fa-plus sumaResta"(click)="peso = peso +1"></i>
                         </div>
                     </div>
 
@@ -55,11 +55,11 @@
                     <div class="contenedor">
                         <p>Edad</p>
                         <div class="estiloNum">
-                            25
+                            {{edad}}
                         </div>
                         <div>
-                            <i class="fa-solid fa-minus sumaResta"></i>
-                            <i class="fa-solid fa-plus sumaResta"></i>
+                            <i class="fa-solid fa-minus sumaResta"(click)="edad = edad -1"></i>
+                            <i class="fa-solid fa-plus sumaResta"(click)="edad = edad +1"></i>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <button class="btn btn-primary btn-lg btn-block btn-color">
+                <button (click)="calcularBMI()" class="btn btn-primary btn-lg btn-block btn-color">
                     CALCULAR
                 </button>
             </div>
