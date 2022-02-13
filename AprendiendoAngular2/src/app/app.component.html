@@ -31,11 +31,21 @@
         <th>Estado</th>
       </thead>
       <tbody>
-        <tr *ngFor="let estudiante of listEstudiantes; let i = index">
+        <tr *ngFor="let estudiante of listEstudiantes; let i = index" [ngSwitch]="estudiante.estado">
           <td>{{i + 1}}</td>
-          <td>{{estudiante.nombre}}</td><!-- Directiva ngStyle --> <!-- Directiva ngClass -->
+          <td>{{estudiante.nombre}}</td>
+          <!-- Directiva ngStyle --> <!-- Directiva ngClass -->
+          <!-- Ejemplo ngClass <span [ngClass]="estudiante.estado === 'Aprobado'  ? 'badge bg-success' : 'badge bg-secondary' ">{{estudiante.estado}}</span> -->
           <td [ngStyle]="{'font-style': estudiante.estado === 'Aprobado' ? 'italic' : 'normal'}">
-            <span [ngClass]="estudiante.estado === 'Aprobado'  ? 'badge bg-success' : 'badge bg-secondary' ">{{estudiante.estado}}</span>  
+            <span *ngSwitchCase="'Aprobado'" class="badge bg-success">
+              {{estudiante.estado}}
+            </span>
+            <span *ngSwitchCase="'Regular'" class="badge bg-secondary">
+              {{estudiante.estado}}
+            </span>
+            <span *ngSwitchCase="'Libre'" class="badge bg-danger">
+              {{estudiante.estado}}
+            </span>      
           </td>
         </tr>
       </tbody>

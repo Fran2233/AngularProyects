@@ -32,11 +32,15 @@ export class AppComponent {
     },
     {
       nombre: 'Pedro',
-      estado: 'Promoción'
+      estado: 'Regular'
     },
     {
       nombre: 'Juan',
-      estado: 'Reprobado'
+      estado: 'Aprobado'
+    },
+    {
+      nombre: 'Franco',
+      estado: 'Libre'
     }
   ]
   mostrar = true;
