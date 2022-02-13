@@ -13,5 +13,28 @@
    <!-- Event Binding -->
    <h3>{{texto2}}</h3>
    <button class="btn btn-primary"(click)="cambiarTexto()">Click Me</button>
+   <!-- Two Way Data Binding envio de html a ts , hay que importar fomsModule -->
+   <input type="text" class="form-control" placeholder="escriba algo" [(ngModel)]="texto3">
+   {{texto3}}
   </div>
+</div>
+<!-- Directivas *ngFor -->
+<div class="container mt-4">
+    <div class="row">
+      <h3>Listado de estudiantes</h3>
+    </div>
+    <table class="table">
+      <thead>
+        <th>Nro</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let estudiante of listEstudiantes">
+          <td></td>
+          <td>{{estudiante.nombre}}</td>
+          <td>{{estudiante.estado}}</td>
+        </tr>
+      </tbody>
+    </table>
 </div>
