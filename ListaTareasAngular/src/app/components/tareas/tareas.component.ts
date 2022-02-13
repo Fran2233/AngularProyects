@@ -29,4 +29,9 @@ export class TareasComponent implements OnInit {
     this.nombreTarea = '';
   }
 
+  eliminarTarea(index:number):void{
+    // Le indico con el 1 que borre solo ese
+    this.listTareas.splice(index,1);
+  }
+
 }

@@ -7,9 +7,15 @@
             <div *ngIf="listTareas.length === 0" class="card p-2">
                 <h6>No hay tareas para mostrar</h6>
             </div>
-            <ul class="list-group">
-                <li *ngFor="let tarea of listTareas" class="list-group-item">
+            <ul class="list-group ">
+                <li *ngFor="let tarea of listTareas; let i = index" class="list-group-item d-flex justify-content-between">
+                    <span class="cursor">
+                        <i class="fa-regular fa-circle">
+                    </i></span>
                     {{tarea.nombre}}
+                    <span class="cursor text-danger" (click) = "eliminarTarea(i)" >
+                        <i class="fa-solid fa-trash-can"></i>
+                    </span>
                 </li>
             </ul>
         </div>
